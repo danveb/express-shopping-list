@@ -1,4 +1,50 @@
 $ npm init --y 
 $ npm install express 
 $ touch .gitignore -> node_modules/ 
-$ nodemon app.js 
+$ nodemon app.js
+$ npm i --save-dev supertest 
+$ nodemon server.js (SUPERTESTING)
+
+INSOMNIA 
+POST localhost:3000/items (name, price) 
+{
+  "item": {
+    "name": "popsicle",
+    "price": 1.45
+  }
+}
+
+POST localhost:3000/items (name, price) 
+{
+  "item": {
+    "name": "apples",
+    "price": 1.08
+  }
+}
+
+GET localhost:3000/items 
+{
+  "items": [
+    {
+      "name": "cucumber",
+      "price": 0.66
+    },
+    {
+      "name": "apples",
+      "price": 1.1
+    }
+  ]
+}
+
+PATCH localhost:3000/cucumber (update price of cucumber to 1.99) 
+{
+  "item": {
+    "name": "cucumber",
+    "price": 1.99
+  }
+}
+
+DELETE localhost:3000/items (name)
+{
+  "message": "Deleted"
+}
