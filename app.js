@@ -1,10 +1,11 @@
 const express = require('express') 
+const router = new express.Router() 
+const itemsRoutes = require('./routes/items') 
 const ExpressError = require('./expressError')
 const app = express() 
 
 app.use(express.json())
-
-// CODE 
+app.use('/items', itemsRoutes) 
 
 /** 404 handler */
 app.use(function (req, res, next) {
@@ -19,6 +20,5 @@ app.use((err, req, res, next) => {
     });
 });
 
-app.listen(3000, function() {
-    console.log('Server starting on Port 3000') 
-})
+// module exports
+module.exports = app 
