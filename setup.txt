@@ -1,0 +1,4 @@
+$ npm init --y 
+$ npm install express 
+$ touch .gitignore -> node_modules/ 
+$ nodemon app.js 
